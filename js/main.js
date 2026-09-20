@@ -1,36 +1,75 @@
 /**
- * FAIRUZ SIBA AL KHIRZA - PORTFOLIO INTERACTIVE CONTROLLER
+ * FAIRUZ SIBA AL KHIRZA - HERMES AGENT EDITORIAL CONTROLLER
  * Strictly 2 asset images used: AgroAI.jpeg & Schedule.png.
  * All other projects redirect/link to GitHub source.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   initNavigation();
+  initTerminalTabs();
   initProjectsSection();
+  initFaqAccordion();
   initGitHubReposFeed();
   initContactCopy();
   initModalEvents();
 });
 
 /* ==========================================================================
-   1. Projects Data (Only 2 local assets: AgroAI.jpeg & Schedule.png)
+   1. Terminal Tab Switcher (Hero Section)
+   ========================================================================== */
+function initTerminalTabs() {
+  const tabs = document.querySelectorAll('.terminal-tab-btn');
+  const codeDisplay = document.getElementById('terminal-code-display');
+  const copyBtn = document.getElementById('terminal-copy-btn');
+
+  const commands = {
+    curl: 'curl -fsSL https://fairuz.dev/api/profile.json',
+    nextjs: 'git clone https://github.com/fairuz-al/managery-schedule-UNS.git',
+    fastapi: 'git clone https://github.com/fairuz-al/AgroAI.git',
+    git: 'git clone https://github.com/fairuz-al/Portofolio.git'
+  };
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const tabKey = tab.getAttribute('data-tab');
+      if (codeDisplay && commands[tabKey]) {
+        codeDisplay.textContent = commands[tabKey];
+      }
+    });
+  });
+
+  if (copyBtn && codeDisplay) {
+    copyBtn.addEventListener('click', () => {
+      const textToCopy = codeDisplay.textContent;
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        showToast('📋 Copied to clipboard: ' + textToCopy);
+      });
+    });
+  }
+}
+
+/* ==========================================================================
+   2. Projects Data (Strictly 2 local assets: AgroAI.jpeg & Schedule.png)
    ========================================================================== */
 const FEATURED_PROJECTS = [
   {
     id: 'agro-ai',
-    title: 'AgroAI Engine',
+    title: 'AgroAI Diagnostic Engine',
     category: 'backend',
     categoryLabel: 'Backend & AI',
-    badgeClass: 'badge-backend',
-    image: 'assets/images/AgroAI.jpeg', // Local Asset 1
+    badgeClass: 'hw-tag',
+    image: 'assets/images/AgroAI.jpeg', // Asset 1
     hasImage: true,
-    description: 'Intelligent agronomy platform powering soil diagnostic pipelines, crop disease classification, and microservice recommendations.',
+    description: 'Intelligent agricultural advisory microservice calculating dynamic N-P-K nutrient balancing and soil suitability profiling using LLM acceleration.',
     highlights: [
-      'Built async RESTful microservices with FastAPI & SQLAlchemy',
-      'Integrated Google GenAI & Groq API for agricultural guidance',
-      'PostgreSQL data architecture with vector index capability'
+      'Engineered asynchronous RESTful endpoints with FastAPI & SQLAlchemy',
+      'Integrated Groq LLM & Google GenAI (Gemini) for agronomic synthesis',
+      'PostgreSQL data layer containerized with Docker & Docker Compose'
     ],
     tags: ['FastAPI', 'Python', 'Google GenAI', 'PostgreSQL', 'Docker'],
+    liveUrl: null,
     githubUrl: 'https://github.com/fairuz-al/AgroAI',
     archOverview: `+-----------------------+     +-----------------------+
 | Next.js / Client UI  | --> | FastAPI API Gateway   |
@@ -44,17 +83,17 @@ const FEATURED_PROJECTS = [
   },
   {
     id: 'schedule-planner',
-    title: 'UNS Schedule Planner',
+    title: 'UNS Schedule Conflict Solver',
     category: 'frontend',
     categoryLabel: 'Frontend & Next.js',
-    badgeClass: 'badge-frontend',
-    image: 'assets/images/Schedule.png', // Local Asset 2
+    badgeClass: 'hw-tag',
+    image: 'assets/images/Schedule.png', // Asset 2
     hasImage: true,
-    description: 'Interactive course schedule builder for university students to resolve timetable conflicts and export optimized weekly routines.',
+    description: 'Interactive university student course timetable builder featuring real-time collision detection matrix and iCal/PNG calendar export engines.',
     highlights: [
-      'Next.js 16 App Router with React 19 server components',
-      'Client-side matrix collision detection algorithm',
-      'PNG & iCal calendar export engine'
+      'Next.js 16 App Router architecture leveraging React 19 concurrent features',
+      'Temporal matrix collision solver identifying course schedule overlaps',
+      'High-resolution canvas and calendar iCal (.ics) export pipelines'
     ],
     tags: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS'],
     liveUrl: 'https://managery-schedule-uns.vercel.app/',
@@ -69,134 +108,136 @@ const FEATURED_PROJECTS = [
   },
   {
     id: 'eigenface-pca',
-    title: 'EigenFace Computer Vision',
+    title: 'Project-EigenFace Vision AI',
     category: 'math',
     categoryLabel: 'CV & Linear Algebra',
-    badgeClass: 'badge-math',
-    image: null, // No image (Asset limit rule)
+    badgeClass: 'hw-tag',
+    image: null, // No image (strictly 2 image limit)
     hasImage: false,
-    description: 'Facial recognition engine implementing Principal Component Analysis (PCA), Covariance Matrix Eigendecomposition, and Euclidean distance classification.',
+    description: 'Biometric facial recognition pipeline calculating covariance matrix eigendecomposition and Principal Component Analysis (PCA) for image vector dimensionality reduction.',
     highlights: [
-      'Constructed covariance matrix decomposition using NumPy',
-      'Calculated top-k Eigenvectors for feature dimensionality reduction',
-      'Implemented vector space matching for low-latency facial recognition'
+      'Constructed covariance matrix decomposition using NumPy vectorized computing',
+      'Extracted top-k principal Eigenfaces retaining >94% facial variance',
+      'Vector space similarity classifier based on Euclidean distance metrics'
     ],
     tags: ['Python', 'OpenCV', 'NumPy', 'PCA', 'Linear Algebra'],
-    githubUrl: 'https://github.com/fairuz-al/EigenFace',
-    archOverview: `[Image Matrix X] -> [Mean Centering] -> [Covariance Cov = X X^T]
-                      -> [Eigenvalues/Vectors] -> [Euclidean Distance Matching]`
+    liveUrl: null,
+    githubUrl: 'https://github.com/fairuz-al/Project-EigenFace',
+    archOverview: `[Face Image Matrix X] -> [Mean Centering] -> [Covariance Cov = X X^T]
+                      -> [Eigenvalues/Vectors] -> [Euclidean Distance Match]`
   },
   {
-    id: 'backend-starter',
-    title: 'FastAPI Production Boilerplate',
+    id: 'financial-manager',
+    title: 'Financial Manager MVC',
     category: 'backend',
-    categoryLabel: 'Backend Infrastructure',
-    badgeClass: 'badge-backend',
-    image: null, // No image (Asset limit rule)
+    categoryLabel: 'Backend & Fullstack',
+    badgeClass: 'hw-tag',
+    image: null, // No image (strictly 2 image limit)
     hasImage: false,
-    description: 'Modular enterprise API foundation featuring JWT authentication, Alembic database migrations, Rate limiting, and Dockerized dev environment.',
+    description: 'Enterprise personal finance management platform engineered with Laravel MVC to monitor cashflow trends, budget thresholds, and ledger allocations.',
     highlights: [
-      'Strict Async SQLAlchemy ORM session lifecycle management',
-      'OAuth2 Bearer authentication with JWT token refresh pairs',
-      'Structured Pydantic v2 schemas with automated OpenAPI docs'
+      'Relational database migrations with Eloquent ORM optimizations',
+      'Dynamic cashflow variance analytics and interactive balance tracking',
+      'Robust authentication middleware supporting multi-account ledgers'
     ],
-    tags: ['FastAPI', 'Python', 'SQLAlchemy', 'Alembic', 'Docker'],
-    githubUrl: 'https://github.com/fairuz-al',
-    archOverview: `[Client Request] -> [Rate Limiter & OAuth Middleware]
-                    -> [Dependency Injection Session] -> [PostgreSQL DB]`
+    tags: ['PHP', 'Laravel', 'PostgreSQL', 'MySQL', 'Eloquent ORM'],
+    liveUrl: null,
+    githubUrl: 'https://github.com/fairuz-al/Financial-Manager_LaravelBased',
+    archOverview: `[HTTP Request] -> [Auth Middleware] -> [Controller Layer]
+                   -> [Eloquent ORM] -> [PostgreSQL / MySQL Database]`
   },
   {
-    id: 'expert-system-agronomy',
+    id: 'expert-system',
     title: 'Forward-Chaining Expert System',
     category: 'math',
-    categoryLabel: 'Expert Systems & AI',
-    badgeClass: 'badge-math',
-    image: null, // No image (Asset limit rule)
+    categoryLabel: 'Algorithms & AI',
+    badgeClass: 'hw-tag',
+    image: null, // No image (strictly 2 image limit)
     hasImage: false,
-    description: 'Rule-based inferencing engine evaluating agricultural facts and leaf symptoms using forward chaining and certainty factors.',
+    description: 'Rule-based inferencing engine evaluating agricultural symptoms and plant pathologies through forward chaining trees and certainty factors.',
     highlights: [
-      'Knowledge base engine with dynamic rule evaluation tree',
-      'Certainty factor calculation for fuzzy symptom scoring',
-      'Clean interactive CLI and API presentation layers'
+      'Dynamically evaluated rule base evaluating premises to reach conclusions',
+      'Certainty factor (CF) scoring handling ambiguous user symptom weights',
+      'High-speed deterministic inference execution in Python'
     ],
     tags: ['Python', 'Expert Systems', 'Algorithms', 'AI'],
+    liveUrl: null,
     githubUrl: 'https://github.com/fairuz-al',
-    archOverview: `[Symptom Inputs] -> [Forward Chaining Inference Engine]
-                      -> [Rule Knowledge Base] -> [Diagnostic Score & CF]`
+    archOverview: `[Observed Symptoms] -> [Forward Chaining Inference Engine]
+                      -> [Knowledge Base Tree] -> [Diagnostic Confidence Score]`
   }
 ];
 
 /* ==========================================================================
-   2. Render Projects & Filter Functionality
+   3. Render Projects Grid & Filters
    ========================================================================== */
 function initProjectsSection() {
   const grid = document.getElementById('projects-grid');
-  const filterBtns = document.querySelectorAll('#project-filters .filter-btn');
+  const filterBtns = document.querySelectorAll('#project-filters .filter-tab');
 
   if (!grid) return;
 
-  function renderProjects(filter = 'all') {
+  function render(filter = 'all') {
     grid.innerHTML = '';
-    const filtered = filter === 'all' 
-      ? FEATURED_PROJECTS 
+    const filtered = filter === 'all'
+      ? FEATURED_PROJECTS
       : FEATURED_PROJECTS.filter(p => p.category === filter);
 
     filtered.forEach(project => {
       const card = document.createElement('article');
-      card.className = 'project-card';
+      card.className = 'editorial-project-card';
 
-      // Header preview section: Image (if 2 allowed assets) or GitHub link hero box
       let mediaHtml = '';
       if (project.hasImage && project.image) {
         mediaHtml = `
-          <div class="project-media-wrap">
-            <img src="${project.image}" alt="${project.title}" class="project-thumbnail" loading="lazy" />
-            <span class="project-badge-float ${project.badgeClass}">${project.categoryLabel}</span>
+          <div class="card-media-box">
+            <img src="${project.image}" alt="${project.title}" loading="lazy" />
+            <span class="hw-tag" style="position:absolute; top:1rem; right:1rem; background:rgba(0,15,10,0.85);">${project.categoryLabel}</span>
           </div>
         `;
       } else {
         mediaHtml = `
-          <div class="project-media-wrap" style="display:flex; flex-direction:column; align-items:center; justify-content:center; background: linear-gradient(135deg, rgba(14, 19, 31, 0.95), rgba(8, 11, 17, 0.98)); border-bottom: 1px solid var(--border-light); padding: 1.5rem; text-align: center;">
-            <span class="project-badge-float ${project.badgeClass}">${project.categoryLabel}</span>
-            <div style="font-size: 2.2rem; margin-bottom: 0.5rem; opacity: 0.85;">📦</div>
-            <div style="font-family: var(--font-mono); font-size: 0.82rem; color: var(--accent-cyan); letter-spacing: 0.05em;">github.com/fairuz-al</div>
-            <div style="font-size: 0.8rem; color: var(--text-subtle); margin-top: 0.25rem;">Source Available on GitHub</div>
+          <div class="card-media-code-art">
+            <span class="hw-tag" style="margin-bottom:0.75rem;">${project.categoryLabel}</span>
+            <div style="font-size:2rem; margin-bottom:0.4rem;">📦</div>
+            <div class="hw-mono" style="font-size:0.78rem; color:var(--hermes-accent);">github.com/fairuz-al</div>
+            <div style="font-size:0.75rem; color:var(--hermes-fg-subtle); margin-top:0.2rem;">Source Repository on GitHub</div>
           </div>
         `;
       }
 
       const highlightsHtml = project.highlights.map(h => `
-        <li><span class="bullet">▹</span> ${h}</li>
+        <li><span style="color:var(--hermes-accent); font-weight:bold;">▹</span> ${h}</li>
       `).join('');
 
       const tagsHtml = project.tags.map(t => `
-        <span class="tag-item">${t}</span>
+        <span class="feature-tag-item">${t}</span>
       `).join('');
 
       card.innerHTML = `
         ${mediaHtml}
-        <div class="project-body">
-          <h3 class="project-title">${project.title}</h3>
-          <p class="project-desc">${project.description}</p>
-          <ul class="project-highlights-list">
+        <div class="card-body-content">
+          <h3 class="card-title">${project.title}</h3>
+          <p class="card-desc">${project.description}</p>
+          <ul class="card-highlights">
             ${highlightsHtml}
           </ul>
-          <div class="project-tags">
+          <div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom:1.5rem;">
             ${tagsHtml}
           </div>
-          <div class="project-footer">
-            <button class="btn btn-outline btn-card view-details-btn" data-id="${project.id}">
+          <div class="card-footer-actions">
+            <button class="hermes-btn hermes-btn-ghost view-details-btn" data-id="${project.id}" style="font-size:0.74rem; padding:0.5rem 0.9rem;">
               Architecture Specs
             </button>
             ${project.liveUrl ? `
-              <a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-card" style="margin-left: auto;">
+              <a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="hermes-btn hermes-btn-accent" style="margin-left:auto; font-size:0.74rem; padding:0.5rem 0.9rem;">
                 Live Demo ↗
               </a>
-              <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-card" title="View GitHub Source">
-                GitHub ↗
+              <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="hermes-btn hermes-btn-ghost" style="font-size:0.74rem; padding:0.5rem 0.9rem;" title="View Source">
+                GH ↗
               </a>
             ` : `
-              <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-card" style="margin-left: auto;">
+              <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="hermes-btn hermes-btn-primary" style="margin-left:auto; font-size:0.74rem; padding:0.5rem 0.9rem;">
                 GitHub ↗
               </a>
             `}
@@ -207,7 +248,6 @@ function initProjectsSection() {
       grid.appendChild(card);
     });
 
-    // Attach click listener for modal details
     document.querySelectorAll('.view-details-btn').forEach(btn => {
       btn.addEventListener('click', (e) => {
         const projId = e.currentTarget.getAttribute('data-id');
@@ -216,22 +256,44 @@ function initProjectsSection() {
     });
   }
 
-  // Filter Buttons event binding
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       const filter = btn.getAttribute('data-filter');
-      renderProjects(filter);
+      render(filter);
     });
   });
 
-  // Initial render
-  renderProjects('all');
+  render('all');
 }
 
 /* ==========================================================================
-   3. GitHub Repositories Live API Feed
+   4. Hermes FAQ Accordion Controller
+   ========================================================================== */
+function initFaqAccordion() {
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const btn = item.querySelector('.faq-question-btn');
+    btn?.addEventListener('click', () => {
+      const isOpen = item.classList.contains('active');
+      faqItems.forEach(i => {
+        i.classList.remove('active');
+        const icon = i.querySelector('.faq-icon');
+        if (icon) icon.textContent = '+';
+      });
+
+      if (!isOpen) {
+        item.classList.add('active');
+        const icon = item.querySelector('.faq-icon');
+        if (icon) icon.textContent = '−';
+      }
+    });
+  });
+}
+
+/* ==========================================================================
+   5. GitHub Repositories Live API Feed
    ========================================================================== */
 async function initGitHubReposFeed() {
   const reposGrid = document.getElementById('repos-grid');
@@ -247,24 +309,24 @@ async function initGitHubReposFeed() {
       html_url: 'https://github.com/fairuz-al/AgroAI'
     },
     {
-      name: 'jadwal-kuliah',
-      description: 'Next.js 16 interactive timetable conflict resolver and schedule generator.',
+      name: 'managery-schedule-UNS',
+      description: 'Next.js 16 interactive timetable conflict resolver and schedule generator for UNS students.',
       language: 'TypeScript',
       stargazers_count: 2,
       forks_count: 0,
-      html_url: 'https://github.com/fairuz-al/jadwal-kuliah'
+      html_url: 'https://github.com/fairuz-al/managery-schedule-UNS'
     },
     {
-      name: 'EigenFace',
+      name: 'Project-EigenFace',
       description: 'Facial recognition algorithm based on Eigenvalues and Principal Component Analysis.',
       language: 'Python',
       stargazers_count: 2,
       forks_count: 0,
-      html_url: 'https://github.com/fairuz-al/EigenFace'
+      html_url: 'https://github.com/fairuz-al/Project-EigenFace'
     },
     {
       name: 'Portofolio',
-      description: 'Modern Cyber-Glass software engineer portfolio built with HTML5, CSS3, and ES6 JS.',
+      description: 'Hermes editorial portfolio built with native HTML5, CSS3, and ES6 JavaScript.',
       language: 'HTML',
       stargazers_count: 1,
       forks_count: 0,
@@ -274,48 +336,32 @@ async function initGitHubReposFeed() {
 
   try {
     const res = await fetch('https://api.github.com/users/fairuz-al/repos?sort=updated&per_page=6');
-    if (!res.ok) throw new Error('GitHub API rate limit or error');
+    if (!res.ok) throw new Error('API Rate Limit or Network Error');
     const repos = await res.json();
     renderRepos(repos.slice(0, 6));
   } catch (err) {
-    console.warn('Using fallback repositories data:', err);
+    console.warn('Using fallback repository data:', err);
     renderRepos(FALLBACK_REPOS);
   }
 
-  function renderRepos(reposList) {
+  function renderRepos(list) {
     reposGrid.innerHTML = '';
-    const langColors = {
-      Python: '#3572A5',
-      TypeScript: '#3178C6',
-      JavaScript: '#F1E05A',
-      HTML: '#E34C26',
-      PHP: '#4F5D95',
-      Vue: '#41B883'
-    };
-
-    reposList.forEach(repo => {
+    list.forEach(repo => {
       const card = document.createElement('a');
       card.href = repo.html_url;
       card.target = '_blank';
       card.rel = 'noopener noreferrer';
       card.className = 'repo-card';
 
-      const dotColor = langColors[repo.language] || '#06B6D4';
-
       card.innerHTML = `
-        <div class="repo-card-top">
-          <span class="repo-icon">📁</span>
-          <span class="repo-visibility">Public</span>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem;">
+          <span class="hw-mono" style="color:var(--hermes-accent); font-size:0.74rem;">PUBLIC REPO</span>
+          <span class="hw-mono" style="color:var(--hermes-fg-subtle); font-size:0.7rem;">⭐ ${repo.stargazers_count || 0}</span>
         </div>
-        <h3 class="repo-name">${repo.name}</h3>
-        <p class="repo-description">${repo.description || 'No description provided.'}</p>
-        <div class="repo-meta-row">
-          <div>
-            <span class="repo-lang-dot" style="background-color: ${dotColor}"></span>
-            ${repo.language || 'Code'}
-          </div>
-          <div>⭐ ${repo.stargazers_count || 0}</div>
-          <div>🍴 ${repo.forks_count || 0}</div>
+        <h4 style="font-family:var(--font-heading); font-size:1.15rem; margin-bottom:0.4rem; color:var(--hermes-fg);">${repo.name}</h4>
+        <p style="font-size:0.86rem; color:var(--hermes-fg-dim); line-height:1.5; margin-bottom:1rem; flex-grow:1;">${repo.description || 'No description provided.'}</p>
+        <div class="hw-mono" style="font-size:0.72rem; color:var(--hermes-accent);">
+          ${repo.language || 'Code'} • View on GitHub ↗
         </div>
       `;
 
@@ -325,7 +371,7 @@ async function initGitHubReposFeed() {
 }
 
 /* ==========================================================================
-   4. Modal Event Controllers
+   6. Project Architecture Specs Modal
    ========================================================================== */
 function openModal(projectId) {
   const project = FEATURED_PROJECTS.find(p => p.id === projectId);
@@ -351,19 +397,18 @@ function openModal(projectId) {
 
   title.textContent = project.title;
   badge.textContent = project.categoryLabel;
-  badge.className = `project-badge-float ${project.badgeClass}`;
   summary.textContent = project.description;
 
   highlights.innerHTML = project.highlights.map(h => `
-    <li style="margin-bottom:0.4rem; font-size:0.9rem; color:#CBD5E1;">
-      <span style="color:var(--accent-cyan); font-weight:bold;">✓</span> ${h}
+    <li style="margin-bottom:0.4rem; font-size:0.88rem; color:#d1fae5;">
+      <span style="color:var(--hermes-accent); font-weight:bold;">✓</span> ${h}
     </li>
   `).join('');
 
   arch.textContent = project.archOverview;
 
   tags.innerHTML = project.tags.map(t => `
-    <span class="tag-item">${t}</span>
+    <span class="feature-tag-item">${t}</span>
   `).join('');
 
   githubLink.href = project.githubUrl;
@@ -409,80 +454,37 @@ function initModalEvents() {
 }
 
 /* ==========================================================================
-   5. Navigation & Scroll Effects
+   7. Navigation Scroll & Contact
    ========================================================================== */
 function initNavigation() {
   const header = document.getElementById('site-header');
-  const mobileToggle = document.getElementById('mobile-nav-toggle');
-  const navMenu = document.getElementById('nav-menu');
-  const navLinks = document.querySelectorAll('.nav-link');
-
-  // Sticky header on scroll
   window.addEventListener('scroll', () => {
     if (window.scrollY > 40) {
       header?.classList.add('scrolled');
     } else {
       header?.classList.remove('scrolled');
     }
-
-    // Active nav link highlight on scroll
-    let current = '';
-    const sections = document.querySelectorAll('section[id]');
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop - 120;
-      if (window.scrollY >= sectionTop) {
-        current = section.getAttribute('id');
-      }
-    });
-
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href') === `#${current}`) {
-        link.classList.add('active');
-      }
-    });
   });
-
-  // Mobile menu toggle
-  if (mobileToggle && navMenu) {
-    mobileToggle.addEventListener('click', () => {
-      const isOpen = navMenu.classList.toggle('open');
-      mobileToggle.setAttribute('aria-expanded', isOpen);
-    });
-
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        navMenu.classList.remove('open');
-        mobileToggle.setAttribute('aria-expanded', 'false');
-      });
-    });
-  }
 }
 
-/* ==========================================================================
-   6. Contact Copy & Toast Notification
-   ========================================================================== */
 function initContactCopy() {
   const copyBtn = document.getElementById('copy-email-btn');
-  const toast = document.getElementById('toast-notice');
-
   if (!copyBtn) return;
 
   copyBtn.addEventListener('click', () => {
     const email = 'fairuzziba@gmail.com';
     navigator.clipboard.writeText(email).then(() => {
-      showToast('📋 Email copied to clipboard: ' + email);
-    }).catch(() => {
-      showToast('Email: ' + email);
+      showToast('📋 Email copied: ' + email);
     });
   });
+}
 
-  function showToast(msg) {
-    if (!toast) return;
-    toast.textContent = msg;
-    toast.classList.add('show');
-    setTimeout(() => {
-      toast.classList.remove('show');
-    }, 3000);
-  }
+function showToast(msg) {
+  const toast = document.getElementById('toast-notice');
+  if (!toast) return;
+  toast.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => {
+    toast.classList.remove('show');
+  }, 3000);
 }

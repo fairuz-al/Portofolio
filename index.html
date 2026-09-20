@@ -6,26 +6,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- SEO Meta Tags -->
-  <title>Fairuz Siba Al Khirza | Full-Stack &amp; Backend/AI Developer Portfolio</title>
+  <title>Fairuz Siba Al Khirza | Informatics Engineer &amp; Full-Stack AI Developer</title>
   <meta name="description"
-    content="Portfolio of Fairuz Siba Al Khirza (fairuz-al) - Software Engineer &amp; Informatics student at UNS specializing in Backend APIs (FastAPI, Laravel), Modern Frontend (Next.js 16, React 19), and AI/Computer Vision (Python, PCA, GenAI)." />
-  <meta name="keywords"
-    content="Fairuz Siba Al Khirza, fairuz-al, Software Engineer, Backend Developer, Frontend Developer, FastAPI, Next.js, Laravel, Python, UNS, AgroAI, EigenFace" />
+    content="Official portfolio of Fairuz Siba Al Khirza (fairuz-al) - Informatics student at Universitas Sebelas Maret (UNS). Backend architecture (FastAPI, Laravel), reactive frontends (Next.js 16, React 19), and applied AI/Computer Vision (Python, PCA)." />
   <meta name="author" content="Fairuz Siba Al Khirza" />
-  <meta name="theme-color" content="#080B11" />
+  <meta name="theme-color" content="#002e1e" />
 
   <!-- OpenGraph / Social Sharing -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Fairuz Siba Al Khirza | Full-Stack &amp; AI Developer" />
+  <meta property="og:title" content="Fairuz Siba Al Khirza | Systems &amp; AI Engineer" />
   <meta property="og:description"
-    content="Explore backend systems, intelligent agricultural AI, campus schedule planners, and computer vision projects created by Fairuz Siba Al Khirza." />
+    content="High-throughput backend architectures, intelligent agronomy AI, schedule timetable solvers, and facial biometric linear algebra." />
   <meta property="og:image" content="https://avatars.githubusercontent.com/u/180007667?v=4" />
 
-  <!-- Google Fonts: Outfit (Display), Inter (Body), JetBrains Mono (Code) -->
+  <!-- Google Fonts: Bebas Neue (Monumental Display), Space Grotesk (Editorial Headings), Space Mono (Terminal/Labels), Inter (Body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@500;600;700;800;900&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
     rel="stylesheet" />
 
   <!-- Stylesheet -->
@@ -34,356 +32,375 @@
 
 <body>
 
-  <!-- Ambient Light Orbs & Tech Grid Background -->
-  <div class="ambient-bg" aria-hidden="true">
-    <div class="ambient-blob blob-1"></div>
-    <div class="ambient-blob blob-2"></div>
-    <div class="ambient-blob blob-3"></div>
-    <div class="grid-overlay"></div>
-  </div>
-
-  <!-- Header Navigation -->
+  <!-- Hermes-Style Grid Header Navigation -->
   <header class="site-header" id="site-header">
-    <div class="container nav-container">
-      <a href="#hero" class="brand-logo" id="nav-brand">
-        <span class="brand-mark">F</span>
-        <span>fairuz<span class="gradient-text">.dev</span></span>
-      </a>
+    <div class="container">
+      <nav class="nav-grid" aria-label="Portfolio Navigation">
+        <!-- Left Nav Links -->
+        <div class="nav-left-links">
+          <a href="#about" class="nav-link-mono">About</a>
+          <a href="#features" class="nav-link-mono">Architecture</a>
+          <a href="#projects" class="nav-link-mono">Projects</a>
+          <a href="#faqs" class="nav-link-mono">FAQs</a>
+          <a href="https://github.com/fairuz-al" target="_blank" rel="noopener noreferrer" class="nav-link-mono">GitHub ↗</a>
+        </div>
 
-      <button class="mobile-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
-        ☰
-      </button>
+        <!-- Center Monumental Brand -->
+        <div class="nav-brand-center">
+          <a href="#top">
+            <span class="brand-main-text">FAIRUZ SIBA</span>
+            <span class="brand-sub-text">AL KHIRZA</span>
+          </a>
+          <div class="nav-social-icons">
+            <a href="https://github.com/fairuz-al" target="_blank" rel="noopener noreferrer" title="GitHub">GH</a>
+            <span>•</span>
+            <a href="mailto:fairuzziba@gmail.com" title="Email">MAIL</a>
+            <span>•</span>
+            <a href="https://managery-schedule-uns.vercel.app/" target="_blank" rel="noopener noreferrer" title="UNS Scheduler">APP ↗</a>
+          </div>
+        </div>
 
-      <ul class="nav-menu" id="nav-menu">
-        <li><a href="#about" class="nav-link" id="nav-link-about">About</a></li>
-        <li><a href="#skills" class="nav-link" id="nav-link-skills">Skills</a></li>
-        <li><a href="#projects" class="nav-link" id="nav-link-projects">Projects</a></li>
-        <li><a href="#repositories" class="nav-link" id="nav-link-repos">GitHub</a></li>
-        <li><a href="#contact" class="nav-link" id="nav-link-contact">Contact</a></li>
-      </ul>
-
-      <a href="#contact" class="nav-cta" id="header-cta-btn">
-        <span>Get in Touch</span> ⚡
-      </a>
+        <!-- Right Action Button -->
+        <div class="nav-right-actions">
+          <div class="status-indicator max-md:hidden">
+            <span class="status-dot"></span>
+            <span>UNS INFORMATICS</span>
+          </div>
+          <a href="#contact" class="hermes-btn hermes-btn-primary">
+            Get in Touch
+          </a>
+          <button class="mobile-toggle" id="mobile-nav-toggle" aria-label="Toggle navigation">
+            ☰
+          </button>
+        </div>
+      </nav>
     </div>
   </header>
 
-  <main>
-    <!-- Hero Section -->
+  <main id="top">
+    <!-- Hero Section (Monumental Typography + Terminal + 2 Image Assets) -->
     <section class="hero-section" id="hero">
       <div class="container hero-grid">
+        <!-- Hero Text & Terminal -->
         <div class="hero-content">
-          <div class="hero-badge">
-            <span class="status-dot"></span>
-            <span>Available for Software Engineering &amp; Collab</span>
+          <div class="hero-badge-row">
+            <span class="hw-tag">:INFORMATICS UNDERGRAD:</span>
+            <div class="status-indicator">
+              <span class="status-dot"></span>
+              <span>Available for Engineering</span>
+            </div>
           </div>
 
-          <h1 class="hero-title">
-            Hi, I'm <span class="gradient-text">Fairuz Siba</span><br />
-            Al Khirza.
+          <h1 class="hero-display-title">
+            <span>THE ENGINEER</span>
+            <span>WHO ARCHITECTS</span>
+            <span class="title-accent">SCALE &amp; AI</span>
           </h1>
 
-          <p class="hero-lead">
-            Informatics student at <strong>Universitas Sebelas Maret (UNS)</strong> &amp; passionate Software Developer.
-            I architect high-performance <strong>Backend Systems</strong>, intelligent <strong>AI/Computer
-              Vision</strong> pipelines, and ultra-responsive <strong>Modern Web Frontends</strong>.
+          <p class="hero-subtitle">
+            Informatics student at <strong>Universitas Sebelas Maret (UNS)</strong>. I engineer asynchronous
+            high-throughput <strong>Backend APIs</strong> (FastAPI, Laravel), reactive <strong>Next.js 16 Web Apps</strong>,
+            and mathematical <strong>Computer Vision / AI</strong> pipelines.
           </p>
 
-          <div class="hero-actions">
-            <a href="#projects" class="btn btn-primary" id="hero-cta-projects">
+          <div class="hero-actions-row">
+            <a href="#projects" class="hermes-btn hermes-btn-accent">
               Explore Projects 🚀
             </a>
-            <a href="https://github.com/fairuz-al" target="_blank" rel="noopener noreferrer" class="btn btn-outline"
-              id="hero-cta-github">
+            <a href="https://managery-schedule-uns.vercel.app/" target="_blank" rel="noopener noreferrer"
+              class="hermes-btn hermes-btn-primary">
+              Live App: UNS Scheduler ↗
+            </a>
+            <a href="https://github.com/fairuz-al" target="_blank" rel="noopener noreferrer"
+              class="hermes-btn hermes-btn-ghost">
               GitHub Profile ↗
             </a>
           </div>
 
-          <div class="hero-stats">
-            <div class="stat-item">
-              <div class="stat-num gradient-text">5+</div>
-              <div class="stat-label">Core Projects</div>
+          <!-- Interactive Terminal Tabs (Hermes Style) -->
+          <div class="hero-terminal">
+            <div class="terminal-header">
+              <div class="terminal-tabs" role="tablist">
+                <button class="terminal-tab-btn active" data-tab="curl">:cURL:</button>
+                <button class="terminal-tab-btn" data-tab="nextjs">:Next.js 16:</button>
+                <button class="terminal-tab-btn" data-tab="fastapi">:FastAPI:</button>
+                <button class="terminal-tab-btn" data-tab="git">:Git Clone:</button>
+              </div>
             </div>
-            <div class="stat-item">
-              <div class="stat-num gradient-text">3+</div>
-              <div class="stat-label">Tech Stacks</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-num gradient-text">100%</div>
-              <div class="stat-label">Open Source</div>
+            <div class="terminal-body">
+              <code class="terminal-code" id="terminal-code-display">curl -fsSL https://fairuz.dev/api/profile.json</code>
+              <button class="terminal-copy-btn" id="terminal-copy-btn" title="Copy command">
+                <span>Copy</span> 📋
+              </button>
             </div>
           </div>
         </div>
 
-        <div class="hero-visual">
-          <div class="profile-card-glow">
-            <div class="avatar-wrapper">
-              <img src="https://avatars.githubusercontent.com/u/180007667?v=4" alt="Fairuz Siba Al Khirza"
-                class="avatar-img" />
-              <div class="avatar-badge-sub" title="Verified GitHub Developer">💻</div>
+        <!-- Right Column: Visual Framing of Exactly 2 Allowed Assets -->
+        <div class="hero-visual-col">
+          <!-- Asset 1: AgroAI -->
+          <article class="hero-asset-card">
+            <div class="hero-asset-header">
+              <span>FEATURED ASSET 01 // BACKEND &amp; AI</span>
+              <span class="hw-mono" style="color:var(--hermes-accent)">LIVE IN PRODUCTION</span>
             </div>
-            <h2 class="profile-name">Fairuz Siba Al Khirza</h2>
-            <div class="profile-handle">@fairuz-al</div>
-            <p class="profile-bio">
-              Software Developer &amp; CS Undergrad exploring distributed backend architecture, Next.js reactive
-              frontends, and applied Machine Learning.
+            <img src="assets/images/AgroAI.jpeg" alt="AgroAI Agricultural Advisory System" class="hero-asset-img" />
+            <div class="hero-asset-footer">
+              <div>
+                <h3 class="hero-asset-title">AgroAI Diagnostic Engine</h3>
+                <span class="hw-mono" style="font-size:0.72rem; color:var(--hermes-fg-dim)">FastAPI • Google GenAI • PostgreSQL</span>
+              </div>
+              <a href="https://github.com/fairuz-al/AgroAI" target="_blank" rel="noopener noreferrer" class="hermes-btn hermes-btn-ghost" style="padding:0.4rem 0.8rem; font-size:0.74rem;">
+                GitHub ↗
+              </a>
+            </div>
+          </article>
+
+          <!-- Asset 2: Schedule UNS -->
+          <article class="hero-asset-card">
+            <div class="hero-asset-header">
+              <span>FEATURED ASSET 02 // NEXT.JS 16 REACT 19</span>
+              <span class="hw-mono" style="color:#67e8f9">DEPLOYED ON VERCEL</span>
+            </div>
+            <img src="assets/images/Schedule.png" alt="UNS Course Timetable Conflict Solver" class="hero-asset-img" />
+            <div class="hero-asset-footer">
+              <div>
+                <h3 class="hero-asset-title">UNS Schedule Conflict Solver</h3>
+                <span class="hw-mono" style="font-size:0.72rem; color:var(--hermes-fg-dim)">Next.js 16 • TypeScript • iCal Export</span>
+              </div>
+              <a href="https://managery-schedule-uns.vercel.app/" target="_blank" rel="noopener noreferrer" class="hermes-btn hermes-btn-accent" style="padding:0.4rem 0.8rem; font-size:0.74rem;">
+                Live Demo ↗
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Signature Hermes Paper Contrast Panel -->
+    <section class="paper-section" id="features">
+      <div class="container">
+        <span class="hw-tag hw-tag-paper">:ARCHITECTURAL PILLARS:</span>
+        <h2 class="paper-section-title">Built with Systems Rigor</h2>
+        <p class="paper-section-subtitle">
+          Core disciplines and engineering competencies leveraged to turn complex data into intuitive, production-grade applications.
+        </p>
+
+        <!-- Numbered Features (#1, #2, #3, #4) -->
+        <div class="features-grid">
+          <!-- #1 Backend -->
+          <article class="feature-paper-card">
+            <span class="feature-num">#01 ARCHITECTURE</span>
+            <h3 class="feature-title">High-Throughput APIs</h3>
+            <p class="feature-desc">
+              Designing asynchronous microservices and scalable REST interfaces using FastAPI and Laravel. Relational schema migrations with PostgreSQL, SQLAlchemy, and Docker.
             </p>
-            <div class="profile-tags">
-              <span class="profile-pill">FastAPI</span>
-              <span class="profile-pill">Next.js 16</span>
-              <span class="profile-pill">Laravel</span>
-              <span class="profile-pill">Python AI</span>
-              <span class="profile-pill">PostgreSQL</span>
+            <div class="feature-tags">
+              <span class="feature-tag-item">FastAPI</span>
+              <span class="feature-tag-item">Laravel</span>
+              <span class="feature-tag-item">PostgreSQL</span>
+              <span class="feature-tag-item">Docker</span>
             </div>
-          </div>
+          </article>
+
+          <!-- #2 Frontend -->
+          <article class="feature-paper-card">
+            <span class="feature-num">#02 INTERFACE</span>
+            <h3 class="feature-title">Next.js 16 &amp; Reactive UI</h3>
+            <p class="feature-desc">
+              Interactive client-side engines featuring React 19 server components, collision detection matrix algorithms, and high-performance canvas/PDF exports.
+            </p>
+            <div class="feature-tags">
+              <span class="feature-tag-item">Next.js 16</span>
+              <span class="feature-tag-item">React 19</span>
+              <span class="feature-tag-item">TypeScript</span>
+              <span class="feature-tag-item">Tailwind CSS</span>
+            </div>
+          </article>
+
+          <!-- #3 Computer Vision -->
+          <article class="feature-paper-card">
+            <span class="feature-num">#03 ALGORITHMS</span>
+            <h3 class="feature-title">Linear Algebra &amp; PCA</h3>
+            <p class="feature-desc">
+              Principal Component Analysis (PCA), covariance matrix diagonalization, and facial biometric vector classification using pure mathematical formulations in NumPy and OpenCV.
+            </p>
+            <div class="feature-tags">
+              <span class="feature-tag-item">PCA</span>
+              <span class="feature-tag-item">OpenCV</span>
+              <span class="feature-tag-item">NumPy</span>
+              <span class="feature-tag-item">Linear Algebra</span>
+            </div>
+          </article>
+
+          <!-- #4 Applied AI -->
+          <article class="feature-paper-card">
+            <span class="feature-num">#04 INTELLIGENCE</span>
+            <h3 class="feature-title">Applied GenAI &amp; Inference</h3>
+            <p class="feature-desc">
+              Real-world LLM integration with Groq low-latency inference and Google GenAI (Gemini SDK) alongside rule-based forward chaining expert systems.
+            </p>
+            <div class="feature-tags">
+              <span class="feature-tag-item">Google GenAI</span>
+              <span class="feature-tag-item">Groq LLM</span>
+              <span class="feature-tag-item">Expert Systems</span>
+              <span class="feature-tag-item">Python</span>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Interactive Tech Stack Matrix -->
-    <section id="skills" class="skills-section">
+    <!-- Projects Section (Curated Showcase: 2 Images + GitHub Source Fallbacks) -->
+    <section class="projects-section" id="projects">
       <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Engineering Toolbelt</span>
-          <h2 class="section-title">Technologies &amp; Architecture</h2>
-          <p class="section-subtitle">
-            Tools and frameworks I leverage to design resilient, full-lifecycle digital products.
+        <div class="section-head">
+          <span class="hw-tag">:ENGINEERING PORTFOLIO:</span>
+          <h2 class="section-display-title">Featured Works</h2>
+          <p class="section-lead">
+            Curated systems, algorithmic engines, and web platforms with direct source code on GitHub.
           </p>
         </div>
 
-        <div class="tech-grid">
-          <!-- Backend & APIs -->
-          <div class="tech-card card-backend">
-            <div class="tech-icon-wrap">⚡</div>
-            <h3 class="tech-card-title">Backend &amp; APIs</h3>
-            <p class="tech-card-desc">Asynchronous microservices, relational database design, and REST APIs.</p>
-            <div class="tech-chips">
-              <span class="tech-chip">FastAPI</span>
-              <span class="tech-chip">Laravel</span>
-              <span class="tech-chip">Python</span>
-              <span class="tech-chip">PHP</span>
-              <span class="tech-chip">SQLAlchemy</span>
-              <span class="tech-chip">PostgreSQL</span>
-              <span class="tech-chip">MySQL</span>
-            </div>
-          </div>
-
-          <!-- Frontend & Web Apps -->
-          <div class="tech-card card-frontend">
-            <div class="tech-icon-wrap">🎨</div>
-            <h3 class="tech-card-title">Frontend &amp; Web Apps</h3>
-            <p class="tech-card-desc">Dynamic server/client interfaces, fluid layouts, and export engines.</p>
-            <div class="tech-chips">
-              <span class="tech-chip">Next.js 16</span>
-              <span class="tech-chip">React 19</span>
-              <span class="tech-chip">TypeScript</span>
-              <span class="tech-chip">Tailwind CSS</span>
-              <span class="tech-chip">HTML5 / Semantic</span>
-              <span class="tech-chip">Canvas / PDF API</span>
-            </div>
-          </div>
-
-          <!-- AI & Computer Vision -->
-          <div class="tech-card card-ai">
-            <div class="tech-icon-wrap">🧠</div>
-            <h3 class="tech-card-title">AI &amp; Algorithms</h3>
-            <p class="tech-card-desc">Machine learning, PCA matrix decomposition, and GenAI LLM inference.</p>
-            <div class="tech-chips">
-              <span class="tech-chip">Google GenAI</span>
-              <span class="tech-chip">Groq LLM</span>
-              <span class="tech-chip">OpenCV</span>
-              <span class="tech-chip">NumPy</span>
-              <span class="tech-chip">Eigenvalues / PCA</span>
-              <span class="tech-chip">Expert Systems</span>
-            </div>
-          </div>
-
-          <!-- DevOps & Tools -->
-          <div class="tech-card card-devops">
-            <div class="tech-icon-wrap">🛠️</div>
-            <h3 class="tech-card-title">DevOps &amp; Tooling</h3>
-            <p class="tech-card-desc">Containerization, version control, and cloud-native workflows.</p>
-            <div class="tech-chips">
-              <span class="tech-chip">Docker</span>
-              <span class="tech-chip">Docker Compose</span>
-              <span class="tech-chip">Git / GitHub</span>
-              <span class="tech-chip">Linux / Hyprland</span>
-              <span class="tech-chip">Vercel</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Showcase -->
-    <section id="projects" class="projects-section">
-      <div class="container">
-        <div class="section-header">
-          <span class="section-tag">Featured Works</span>
-          <h2 class="section-title">What I've Built</h2>
-          <p class="section-subtitle">
-            A curated collection of backend engines, web applications, and algorithmic research projects from my GitHub.
-          </p>
-        </div>
-
-        <!-- Filter Controls -->
-        <div class="filter-container" id="project-filters">
-          <button class="filter-btn active" data-filter="all" id="filter-all">All Projects (5)</button>
-          <button class="filter-btn" data-filter="backend" id="filter-backend">Backend &amp; Fullstack</button>
-          <button class="filter-btn" data-filter="frontend" id="filter-frontend">Frontend &amp; Next.js</button>
-          <button class="filter-btn" data-filter="math" id="filter-math">Computer Vision &amp; Math</button>
+        <!-- Filter Tabs -->
+        <div class="filter-tabs-row" id="project-filters">
+          <button class="filter-tab active" data-filter="all">All Projects (5)</button>
+          <button class="filter-tab" data-filter="backend">Backend &amp; Fullstack</button>
+          <button class="filter-tab" data-filter="frontend">Frontend &amp; Next.js</button>
+          <button class="filter-tab" data-filter="math">Computer Vision &amp; Math</button>
         </div>
 
         <!-- Dynamic Projects Grid -->
-        <div class="projects-grid" id="projects-grid">
+        <div class="projects-cards-grid" id="projects-grid">
           <!-- Rendered dynamically by js/main.js -->
         </div>
       </div>
     </section>
 
-    <!-- GitHub Repositories Live Feed -->
-    <section id="repositories" class="repositories-section">
+    <!-- Hermes Style FAQ Accordion Section -->
+    <section class="faq-section" id="faqs">
       <div class="container">
-        <div class="section-header">
-          <span class="section-tag">GitHub Stream</span>
-          <h2 class="section-title">Open Source Repositories</h2>
-          <p class="section-subtitle">
-            Live repository feed directly from <a href="https://github.com/fairuz-al" target="_blank"
-              rel="noopener noreferrer" style="color: var(--accent-cyan); text-decoration: underline;">@fairuz-al</a>.
+        <span class="hw-tag hw-tag-paper">:ENGINEERING INQUIRIES:</span>
+        <h2 class="paper-section-title">Technical Details &amp; FAQs</h2>
+
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question-btn" type="button">
+              <span>What is your academic and engineering background?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              I am an undergraduate student in Informatics (Computer Science) at Universitas Sebelas Maret (UNS) in Surakarta, Indonesia. My engineering focus centers on high-throughput backend infrastructure, reactive client-side applications, and applied mathematical computing.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question-btn" type="button">
+              <span>How does the UNS Schedule Planner collision algorithm work?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              The application translates university course schedules into temporal matrix intervals. It detects overlaps in real-time, highlights conflicting periods, and allows students to export conflict-free timetables into high-resolution PNGs or calendar iCal (.ics) formats. You can try the live demo at <a href="https://managery-schedule-uns.vercel.app/" target="_blank" rel="noopener noreferrer" style="color:var(--hermes-primary); font-weight:700; text-decoration:underline;">managery-schedule-uns.vercel.app</a>.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question-btn" type="button">
+              <span>What mathematical principles power Project-EigenFace?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              Project-EigenFace computes the covariance matrix from centered facial image vectors and calculates its orthonormal Eigenvectors via Principal Component Analysis (PCA). The top-k principal components capture over 94% of dataset variance for low-dimensional Euclidean distance classification.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question-btn" type="button">
+              <span>How is AgroAI architected?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              AgroAI operates as an asynchronous FastAPI backend service containerized with Docker. It queries PostgreSQL for soil and altitude profiling data, computes dynamic N-P-K nutrient schedules, and prompts Groq LLM / Google GenAI SDK for contextual agricultural recommendations.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Live GitHub Stream Section -->
+    <section class="repos-section" id="repositories">
+      <div class="container">
+        <div class="section-head">
+          <span class="hw-tag">:OPEN SOURCE REPOSITORIES:</span>
+          <h2 class="section-display-title">GitHub Stream</h2>
+          <p class="section-lead">
+            Public repositories fetched directly from <a href="https://github.com/fairuz-al" target="_blank" rel="noopener noreferrer" style="color:var(--hermes-accent); text-decoration:underline;">@fairuz-al</a>.
           </p>
         </div>
 
-        <div class="github-stats-bar">
-          <div class="gh-user-info">
-            <img src="https://avatars.githubusercontent.com/u/180007667?v=4" alt="fairuz-al" class="gh-avatar-small" />
-            <div class="gh-user-meta">
-              <h4>fairuz-al</h4>
-              <p>github.com/fairuz-al • Public Repositories</p>
-            </div>
-          </div>
-          <a href="https://github.com/fairuz-al" target="_blank" rel="noopener noreferrer" class="btn btn-outline"
-            style="padding: 0.5rem 1.2rem; font-size: 0.88rem;">
-            Follow on GitHub ↗
-          </a>
-        </div>
-
-        <div class="repos-cards-grid" id="repos-grid">
-          <!-- Rendered dynamically by js/main.js -->
-        </div>
-      </div>
-    </section>
-
-    <!-- About & Academic Background -->
-    <section id="about" class="about-section">
-      <div class="container">
-        <div class="about-card">
-          <div class="about-text">
-            <span class="section-tag">Background</span>
-            <h3>Engineering &amp; Informatics</h3>
-            <p>
-              I am an undergraduate student in <strong>Informatics / Computer Science</strong> at <strong>Universitas
-                Sebelas Maret (UNS)</strong>. My passion lies at the intersection of robust backend infrastructure,
-              mathematical computing, and intuitive user interfaces.
-            </p>
-            <p>
-              Whether it's deploying AI-assisted agronomy recommendations, building student course conflict-resolution
-              engines with Next.js 16, or computing Eigenvectors for facial biometrics, I enjoy engineering software
-              that turns complex data into clean user experiences.
-            </p>
-            <ul class="about-highlights">
-              <li><span class="check-icon">✓</span> High-performance API development with FastAPI &amp; Laravel</li>
-              <li><span class="check-icon">✓</span> Modern web experiences with Next.js 16, React 19, &amp; Tailwind
-              </li>
-              <li><span class="check-icon">✓</span> Applied mathematical thinking &amp; data modeling</li>
-            </ul>
-          </div>
-
-          <div class="about-badges-grid">
-            <div class="academic-badge">
-              <div class="icon">🎓</div>
-              <h4>Universitas Sebelas Maret</h4>
-              <p>Informatics / Computer Science (Surakarta, Indonesia)</p>
-            </div>
-            <div class="academic-badge">
-              <div class="icon">🚀</div>
-              <h4>Full-Stack Capabilities</h4>
-              <p>From database schema migrations to responsive client-side UI</p>
-            </div>
-            <div class="academic-badge">
-              <div class="icon">🔬</div>
-              <h4>Linear Algebra &amp; AI</h4>
-              <p>PCA mathematical decomposition &amp; LLM prompt engineering</p>
-            </div>
-            <div class="academic-badge">
-              <div class="icon">📦</div>
-              <h4>Production Mindset</h4>
-              <p>Docker containerization, semantic commits, clean architecture</p>
-            </div>
-          </div>
+        <div class="repos-feed-grid" id="repos-grid">
+          <!-- Dynamically populated by js/main.js -->
         </div>
       </div>
     </section>
 
     <!-- Contact Hub -->
-    <section id="contact" class="contact-section">
+    <section class="contact-section" id="contact">
       <div class="container">
-        <div class="contact-wrapper">
-          <span class="section-tag"
-            style="background: rgba(255, 255, 255, 0.08); color: #FFFFFF; border-color: rgba(255, 255, 255, 0.2);">Connect</span>
-          <h2 class="contact-title">Let's Build Something Great Together</h2>
-          <p class="contact-lead">
-            Interested in collaborating on a project, discussing software engineering opportunities, or exploring tech?
-            Feel free to reach out directly!
-          </p>
+        <span class="hw-tag">:INITIATE OUTREACH:</span>
+        <h2 class="section-display-title" style="margin-top:0.75rem;">Let's Build Together</h2>
+        <p class="section-lead">
+          Open for software engineering opportunities, research collaboration, and systems architecture discussions.
+        </p>
 
-          <div class="email-copy-box">
-            <span class="email-text">fairuzziba@gmail.com</span>
-            <button class="btn-copy" id="copy-email-btn" title="Click to copy email address">
-              <span>Copy Email</span> 📋
-            </button>
-          </div>
+        <div class="contact-email-bar">
+          <span class="contact-email-text">fairuzziba@gmail.com</span>
+          <button class="hermes-btn hermes-btn-accent" id="copy-email-btn" title="Click to copy email">
+            <span>Copy</span> 📋
+          </button>
+        </div>
 
-          <div class="social-links">
-            <a href="mailto:fairuzziba@gmail.com" class="social-btn" id="email-mailto-link">
-              ✉️ Send Email
-            </a>
-            <a href="https://github.com/fairuz-al" target="_blank" rel="noopener noreferrer" class="social-btn"
-              id="social-gh-link">
-              🐙 GitHub Profile
-            </a>
-          </div>
+        <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+          <a href="mailto:fairuzziba@gmail.com" class="hermes-btn hermes-btn-primary">
+            ✉️ Send Direct Email
+          </a>
+          <a href="https://github.com/fairuz-al" target="_blank" rel="noopener noreferrer" class="hermes-btn hermes-btn-ghost">
+            🐙 GitHub Profile
+          </a>
+          <a href="https://managery-schedule-uns.vercel.app/" target="_blank" rel="noopener noreferrer" class="hermes-btn hermes-btn-accent">
+            🚀 Live UNS Scheduler
+          </a>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- Project Deep-Dive Modal Dialog -->
+  <!-- Project Deep Dive Modal -->
   <div class="modal-overlay" id="project-modal" aria-hidden="true" role="dialog" aria-modal="true">
     <div class="modal-box">
-      <button class="modal-close-btn" id="modal-close" aria-label="Close modal dialog">✕</button>
+      <button class="modal-close-btn" id="modal-close" aria-label="Close dialog">✕</button>
       <img src="" alt="" class="modal-header-img" id="modal-img" />
       <div class="modal-body">
-        <div class="modal-title-row">
-          <h3 class="modal-title" id="modal-title">Project Title</h3>
-          <span class="project-badge-float" id="modal-badge">Category</span>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.75rem;">
+          <h3 id="modal-title" style="font-family:var(--font-heading); font-size:1.6rem;">Title</h3>
+          <span class="hw-tag" id="modal-badge">CATEGORY</span>
         </div>
-        <p class="modal-desc" id="modal-summary">Detailed description of the project.</p>
+        <p id="modal-summary" style="color:var(--hermes-fg-dim); margin-bottom:1.25rem; font-size:0.95rem;"></p>
 
-        <h4 class="modal-section-title">Key Architectural Features</h4>
-        <ul id="modal-highlights" style="list-style: none; padding-left: 0.2rem;"></ul>
+        <h4 style="font-family:var(--font-mono); font-size:0.85rem; color:var(--hermes-accent); text-transform:uppercase; margin-bottom:0.5rem;">Key Highlights</h4>
+        <ul id="modal-highlights" style="list-style:none; margin-bottom:1.25rem;"></ul>
 
-        <h4 class="modal-section-title">Technical Architecture &amp; Stack</h4>
+        <h4 style="font-family:var(--font-mono); font-size:0.85rem; color:var(--hermes-accent); text-transform:uppercase; margin-bottom:0.5rem;">System Architecture</h4>
         <pre class="modal-arch-box" id="modal-arch"></pre>
 
-        <h4 class="modal-section-title">Technologies Used</h4>
-        <div class="project-tags" id="modal-tags" style="margin-bottom: 0;"></div>
+        <div style="display:flex; flex-wrap:wrap; gap:0.4rem; margin-bottom:1.5rem;" id="modal-tags"></div>
 
-        <div class="modal-actions">
-          <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="modal-live" style="display: none;">
+        <div style="display:flex; gap:0.75rem; border-top:1px solid rgba(244, 245, 240, 0.1); padding-top:1.25rem;">
+          <a href="#" target="_blank" rel="noopener noreferrer" class="hermes-btn hermes-btn-accent" id="modal-live" style="display:none;">
             Live App ↗
           </a>
-          <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline" id="modal-github">
-            View Source on GitHub ↗
+          <a href="#" target="_blank" rel="noopener noreferrer" class="hermes-btn hermes-btn-ghost" id="modal-github">
+            View on GitHub ↗
           </a>
         </div>
       </div>
@@ -395,9 +412,9 @@
 
   <!-- Footer -->
   <footer class="site-footer">
-    <div class="container footer-content">
-      <p>&copy; 2026 Fairuz Siba Al Khirza. All rights reserved.</p>
-      <p>Crafted with modern HTML5, Vanilla CSS3 &amp; ES6+ JavaScript.</p>
+    <div class="container footer-row">
+      <p>&copy; 2026 Fairuz Siba Al Khirza • Informatics, Universitas Sebelas Maret (UNS)</p>
+      <p>Hermes Editorial Style • Cyber-Emerald Edition</p>
     </div>
   </footer>
 
