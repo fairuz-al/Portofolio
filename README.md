@@ -63,7 +63,7 @@ Surakarta, Indonesia 🇮🇩
 | Project | Description | Tech Stack | Link |
 | :--- | :--- | :--- | :--- |
 | 🌾 **AgroAI** | Intelligent agricultural advisory platform with soil suitability analysis, dynamic N-P-K nutrient balancing, and GenAI recommendations. | `FastAPI`, `Python`, `Google GenAI`, `PostgreSQL`, `Docker` | [Repository ↗](https://github.com/fairuz-al/AgroAI) |
-| 📅 **UNS Schedule Planner** | Interactive university course timetable conflict resolver with matrix collision detection and iCal / PNG calendar export. | `Next.js 16`, `React 19`, `TypeScript`, `Tailwind` | [Repository ↗](https://github.com/fairuz-al/jadwal-kuliah) |
+| 📅 **UNS Schedule Planner** | Interactive university course timetable conflict resolver with matrix collision detection and iCal / PNG calendar export. | `Next.js 16`, `React 19`, `TypeScript`, `Tailwind` | [Live App ↗](https://managery-schedule-uns.vercel.app/) • [Repository ↗](https://github.com/fairuz-al/managery-schedule-UNS) |
 | 👤 **Project-EigenFace** | Biometric facial recognition engine implementing Principal Component Analysis (PCA) and covariance matrix eigendecomposition. | `Python`, `OpenCV`, `NumPy`, `Linear Algebra` | [Repository ↗](https://github.com/fairuz-al/Project-EigenFace) |
 | 💼 **Financial Manager** | Enterprise-style financial management system built on Laravel MVC for monitoring cash flow and expense allocations. | `PHP`, `Laravel`, `PostgreSQL`, `MySQL` | [Repository ↗](https://github.com/fairuz-al/Financial-Manager_LaravelBased) |
 

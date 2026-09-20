@@ -57,7 +57,8 @@ const FEATURED_PROJECTS = [
       'PNG & iCal calendar export engine'
     ],
     tags: ['Next.js 16', 'React 19', 'TypeScript', 'Tailwind CSS'],
-    githubUrl: 'https://github.com/fairuz-al/jadwal-kuliah',
+    liveUrl: 'https://managery-schedule-uns.vercel.app/',
+    githubUrl: 'https://github.com/fairuz-al/managery-schedule-UNS',
     archOverview: `+-----------------------+     +-----------------------+
 |  User Timetable Input | --> | Conflict Solver Engine|
 +-----------------------+     +-----------------------+
@@ -187,9 +188,18 @@ function initProjectsSection() {
             <button class="btn btn-outline btn-card view-details-btn" data-id="${project.id}">
               Architecture Specs
             </button>
-            <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-card" style="margin-left: auto;">
-              GitHub ↗
-            </a>
+            ${project.liveUrl ? `
+              <a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-card" style="margin-left: auto;">
+                Live Demo ↗
+              </a>
+              <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-card" title="View GitHub Source">
+                GitHub ↗
+              </a>
+            ` : `
+              <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-card" style="margin-left: auto;">
+                GitHub ↗
+              </a>
+            `}
           </div>
         </div>
       `;
@@ -330,6 +340,7 @@ function openModal(projectId) {
   const arch = document.getElementById('modal-arch');
   const tags = document.getElementById('modal-tags');
   const githubLink = document.getElementById('modal-github');
+  const liveLink = document.getElementById('modal-live');
 
   if (project.hasImage && project.image) {
     img.src = project.image;
@@ -356,6 +367,15 @@ function openModal(projectId) {
   `).join('');
 
   githubLink.href = project.githubUrl;
+
+  if (liveLink) {
+    if (project.liveUrl) {
+      liveLink.href = project.liveUrl;
+      liveLink.style.display = 'inline-flex';
+    } else {
+      liveLink.style.display = 'none';
+    }
+  }
 
   modal.classList.add('active');
   modal.setAttribute('aria-hidden', 'false');
