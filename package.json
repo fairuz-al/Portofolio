@@ -1,0 +1,9 @@
+{
+  "name": "fairuz-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfolio of Fairuz Siba Al Khirza (fairuz-al)",
+  "scripts": {
+    "build": "echo 'Static build ready'"
+  }
+}
