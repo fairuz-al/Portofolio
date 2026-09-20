@@ -240,29 +240,9 @@ python3 -m http.server 8080
 
 ---
 
-## 📊 GitHub Statistics
-
-<div align="center">
-
-<img src="https://github-readme-stats.vercel.app/api?username=fairuz-al&show_icons=true&theme=tokyonight&hide_border=true&bg_color=080B11&title_color=06B6D4&icon_color=8B5CF6&text_color=94A3B8" alt="fairuz-al GitHub Stats" />
-
-<br />
-
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=fairuz-al&layout=compact&theme=tokyonight&hide_border=true&bg_color=080B11&title_color=06B6D4&text_color=94A3B8" alt="Top Languages" />
-
-</div>
-
----
-
 ## 📬 Contact & Connect
 
 - **Author**: Fairuz Siba Al Khirza
 - **GitHub**: [@fairuz-al](https://github.com/fairuz-al)
 - **Email**: [fairuzziba@gmail.com](mailto:fairuzziba@gmail.com)
 - **Institution**: Universitas Sebelas Maret (UNS), Surakarta, Indonesia
-
----
-
-<div align="center">
-  <sub>Built with ❤️ by Fairuz Siba Al Khirza • Distributed under the MIT License</sub>
-</div>
